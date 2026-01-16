@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriOracle | Guest Mode</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #81c784;
+            --dark-green: #1b5e20;
+            --soil-brown: #8d6e63;
+            --golden-yellow: #ffd54f;
+            --white: #ffffff;
+            --off-white: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--off-white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--golden-yellow);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 0 20px;
+            flex: 1;
+        }
+
+        .guest-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark-green);
+            font-weight: 500;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: var(--light-green);
+            box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+        }
+
+        .forecast-info {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .weather-info {
+            margin-top: 20px;
+            background-color: rgba(129, 199, 132, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .alert {
+            margin-top: 20px;
+            background-color: rgba(255, 213, 79, 0.2);
+            border-left: 5px solid var(--golden-yellow);
+            padding: 15px;
+            text-align: left;
+        }
+
+        .register-prompt {
+            margin-top: 30px;
+            color: var(--soil-brown);
+            font-weight: bold;
+        }
+
+        .register-link {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .register-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .guest-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-seedling"></i>
+            <span>AgriOracle</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="guest-card">
+            <h1>Guest Mode</h1>
+            <p>Access basic forecast and weather information</p>
+            
+            <div class="form-group">
+                <label for="region">Select Region/Province or Barangay</label>
+                <select id="region">
+                    <option value="" disabled selected>Select your location</option>
+                    <option value="region1">Region 1</option>
+                    <option value="region2">Region 2</option>
+                    <option value="region3">Region 3</option>
+                    <option value="region4">Region 4</option>
+                    <option value="region5">Region 5</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="crop">Select Crop</label>
+                <select id="crop">
+                    <option value="" disabled selected>Select your crop</option>
+                    <option value="rice">Rice</option>
+                    <option value="corn">Corn</option>
+                    <option value="tomato">Tomato</option>
+                    <option value="vegetables">Vegetables</option>
+                </select>
+            </div>
+
+            <div class="forecast-info">
+                <h2>Forecasted Planting and Harvest Windows</h2>
+                <p><strong>Planting Window:</strong> October 15 - October 30, 2023</p>
+                <p><strong>Harvest Window:</strong> November 15 - November 30, 2023</p>
+            </div>
+
+            <div class="weather-info">
+                <h2>Today's Weather</h2>
+                <p><strong>Temperature:</strong> 28°C</p>
+                <p><strong>Rain Chance:</strong> 20%</p>
+                <p><strong>Typhoon Alerts:</strong> None</p>
+            </div>
+
+            <div class="alert">
+                <h2>Trial Alert</h2>
+                <p>Rain expected in 2 days. Delay planting.</p>
+                <p><em>Real-time alerts are only available after login.</em></p>
+            </div>
+
+            <div class="register-prompt">
+                🔓 <span>Register to get personalized alerts and save your farm data.</span>
+                <br>
+                <a href="login.html" class="register-link">Sign Up Now</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>AgriOracle &copy; 2025 | Helping Filipino Farmers Succeed</p>
+    </footer>
+
+    <script>
+        // You could add dynamic functionality here
+        console.log('Guest mode loaded');
+    </script>
+</body>
+</html>
